@@ -41,7 +41,7 @@ const server = http.createServer((request,response)=>{
     }else if(method ==="GET" && url ==='/readFile'){
         var textFile ;
         try {
-            textFile = fs.writeFileSync(path.resolve('files','home.txt'),'utf-8');
+            textFile = fs.readFileSync(path.resolve('files','home.txt'),'utf-8');
         } catch (error) {
             console.error(error)
         }
