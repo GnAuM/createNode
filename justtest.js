@@ -48,6 +48,11 @@ const server = http.createServer((request,response)=>{
         response.setHeader('Content-Type' ,'text/html; charset=UTF-8');
         response.statusCode = 200;
         response.end(textFile);
+    }else if(method ==="GET" && url ==='/readDigital'){
+        // เขียนcontent ลงไฟล์
+        const logContent =`${new Date()}:${method}${url}\n`
+        fs.writeFileSync('request.log',logContent,{flag:'a+'});
+        response.end("OK");
     }
 
 
