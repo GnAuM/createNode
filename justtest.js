@@ -1,7 +1,8 @@
 require('dotenv').config();
 const http = require('http');
 const mysql2 = require('mysql2');
-
+const fs =require('fs');
+const path = require('path');
 const {MYSQL_USERNAME,MYSQL_PASSWORD,MYSQL_HOSTNAME,MYSQ_PORT,MYSQL_DB} =process.env;
 const connection = mysql2.createConnection({   // config ค่าการเชื่อมต่อฐานข้อมูล
     host     : MYSQL_HOSTNAME, 
@@ -37,6 +38,16 @@ const server = http.createServer((request,response)=>{
         response.setHeader('Content-Type' ,'text/html; charset=UTF-8');
         response.statusCode = 200;
         response.end(content);
+    }else if(method ==="GET" && url ==='/readFile'){
+        var textFile ;
+        try {
+            textFile = fs.writeFileSync(path.resolve('files','home.txt'),'utf-8');
+        } catch (error) {
+            console.error(error)
+        }
+        response.setHeader('Content-Type' ,'text/html; charset=UTF-8');
+        response.statusCode = 200;
+        response.end(textFile);
     }
 
 
