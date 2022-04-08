@@ -1,0 +1,28 @@
+{
+  "name": "createnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "createjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GnAuM/createNode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GnAuM/createNode/issues"
+  },
+  "homepage": "https://github.com/GnAuM/createNode#readme",
+  "dependencies": {
+    "@types/node": "^17.0.23",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "marked": "^4.0.12",
+    "minimist": "^1.2.6",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
